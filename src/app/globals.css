@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-montserrat);
+}
+
+@layer base {
+  body {
+    @apply font-sans font-bold;
+  }
+  a,
+  button {
+    @apply v-focus-ring;
+  }
+}
+
+@utility v-focus-ring {
+  @apply rounded-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current;
+}
+
+@utility v-footer-link {
+  @apply rounded-xs underline underline-offset-2;
+}
