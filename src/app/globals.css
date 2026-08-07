@@ -31,6 +31,12 @@
   --font-sans: var(--font-montserrat);
 }
 
+@property --price {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
 @layer base {
   body {
     @apply bg-very-light-grayish-blue font-sans text-body font-bold text-grayish-blue;
@@ -91,6 +97,32 @@
 
 @utility v-card-featured {
   @apply bg-linear-to-br/srgb from-primary-light to-primary text-white lg:z-10 lg:py-14;
+}
+
+@keyframes v-count-up {
+  from {
+    --price: 0;
+  }
+}
+
+@utility v-price {
+  --price: var(--price-monthly);
+  counter-reset: price var(--price);
+  transition: --price 500ms ease-out;
+  animation: v-count-up 900ms ease-out;
+
+  &::before {
+    content: counter(price);
+  }
+
+  .group:has(:checked) & {
+    --price: var(--price-annually);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    animation: none;
+  }
 }
 
 @utility v-features {

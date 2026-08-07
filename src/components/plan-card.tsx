@@ -2,6 +2,8 @@ import type { Plan } from "@/data";
 import { cn } from "@/lib";
 
 export default function PlanCard({ name, price, features, featured }: Plan) {
+  const remainder = price.monthly.toFixed(2).slice(-3);
+
   return (
     <li
       className={cn("v-card", {
@@ -17,17 +19,27 @@ export default function PlanCard({ name, price, features, featured }: Plan) {
           { "text-white": featured },
         )}
       >
-        <span className="text-currency">$</span>
-        <span className="text-price group-has-checked:hidden">
-          {price.monthly.toFixed(2)}
+        <span aria-hidden="true" className="text-currency">
+          $
         </span>
-        <span className="hidden text-price group-has-checked:inline">
-          {price.annually.toFixed(2)}
+        <span
+          aria-hidden="true"
+          className="v-price text-price"
+          style={
+            {
+              "--price-monthly": Math.trunc(price.monthly),
+              "--price-annually": Math.trunc(price.annually),
+            } as React.CSSProperties
+          }
+        >
+          {remainder}
         </span>
-        <span className="sr-only group-has-checked:hidden"> per month</span>
+
+        <span className="sr-only group-has-checked:hidden">
+          ${price.monthly.toFixed(2)} per month
+        </span>
         <span className="sr-only hidden group-has-checked:inline">
-          {" "}
-          per year
+          ${price.annually.toFixed(2)} per year
         </span>
       </p>
 
