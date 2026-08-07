@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="px-6 pb-0.5 text-center">
-      <p className="text-xs">
+      <p className="text-xs text-dark-grayish-blue">
         Challenge by{" "}
         <a
           href="https://www.frontendmentor.io?ref=challenge"

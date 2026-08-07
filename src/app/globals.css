@@ -1,12 +1,39 @@
 @import "tailwindcss";
 
+@theme {
+  --color-very-light-grayish-blue: hsl(240 78% 98.2%);
+  --color-grayish-blue: hsl(232 13% 48.5%);
+  --color-dark-grayish-blue: hsl(232 13% 33.3%);
+  --color-primary-light: hsl(236 72% 66.5%);
+  --color-primary: hsl(237 63.5% 51.7%);
+
+  --text-heading: 2rem;
+  --text-heading--line-height: 1.2;
+  --text-price: min(4.5rem, 18vw);
+  --text-price--line-height: 1;
+  --text-price--letter-spacing: -0.03em;
+  --text-currency: min(2.5rem, 10vw);
+  --text-currency--letter-spacing: -0.03em;
+  --text-plan: 1.125rem;
+  --text-plan--line-height: 1.75rem;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.75rem;
+  --text-button: 0.8125rem;
+  --text-button--line-height: 1;
+
+  --radius-card: 10px;
+  --radius-button: 6px;
+
+  --shadow-card: 0 20px 40px hsl(244 61% 89% / 0.5);
+}
+
 @theme inline {
   --font-sans: var(--font-montserrat);
 }
 
 @layer base {
   body {
-    @apply font-sans font-bold;
+    @apply bg-very-light-grayish-blue font-sans text-body font-bold text-grayish-blue;
   }
   a,
   button {
@@ -15,9 +42,75 @@
 }
 
 @utility v-focus-ring {
-  @apply rounded-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current;
+  @apply rounded-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
 }
 
 @utility v-footer-link {
-  @apply rounded-xs underline underline-offset-2;
+  @apply rounded-xs text-primary underline underline-offset-2;
+}
+
+@utility v-page {
+  background-image: url("/bg-top.svg");
+  background-position: top right -12.25rem;
+  background-repeat: no-repeat;
+
+  @media (width >= theme(--breakpoint-md)) {
+    background-image: url("/bg-top.svg"), url("/bg-bottom.svg");
+    background-position:
+      top right -12.25rem,
+      bottom left;
+  }
+
+  @media (width >= theme(--breakpoint-lg)) {
+    background-position:
+      top right,
+      bottom left;
+  }
+}
+
+@utility v-toggle {
+  @apply relative h-8 w-14 shrink-0 cursor-pointer rounded-full;
+  @apply bg-linear-to-br/srgb from-primary-light to-primary;
+  @apply before:absolute before:inset-0 before:rounded-full before:bg-white/50 before:opacity-0 before:transition-opacity hover:before:opacity-100 motion-reduce:before:transition-none;
+  @apply has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-primary;
+}
+
+@utility v-plans {
+  @apply mx-auto grid max-w-96 gap-8;
+  @apply lg:max-w-264 lg:grid-cols-3 lg:items-center lg:gap-0;
+}
+
+@utility v-card {
+  @apply relative flex min-w-0 flex-col rounded-card px-6 py-8 shadow-card lg:p-8;
+  @apply lg:first:rounded-r-none lg:last:rounded-l-none;
+}
+
+@utility v-card-plain {
+  @apply bg-white;
+}
+
+@utility v-card-featured {
+  @apply bg-linear-to-br/srgb from-primary-light to-primary text-white lg:z-10 lg:py-14;
+}
+
+@utility v-features {
+  @apply mt-8 divide-y divide-current/25 border-y border-current/25;
+}
+
+@utility v-btn {
+  @apply mt-8 flex h-11 items-center justify-center rounded-button border text-button tracking-widest uppercase transition-colors motion-reduce:transition-none;
+}
+
+@utility v-btn-plain {
+  @apply border-transparent bg-linear-to-br/srgb from-primary-light to-primary text-white;
+  @apply hover:border-primary hover:bg-none hover:text-primary;
+}
+
+@utility v-btn-featured {
+  @apply border-transparent bg-white text-primary focus-visible:outline-white;
+  @apply hover:border-white hover:bg-transparent hover:text-white;
+}
+
+@utility v-toggle-knob {
+  @apply pointer-events-none absolute top-1 right-1 size-6 rounded-full bg-white transition-transform peer-checked:-translate-x-6 motion-reduce:transition-none;
 }
