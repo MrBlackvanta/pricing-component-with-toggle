@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 const title = "Pricing component with toggle";
 const description =
   "Three-tier pricing table with an accessible monthly/annual billing toggle — Frontend Mentor challenge built with Next.js, TypeScript, and Tailwind CSS.";
-const siteUrl = "https://vanta-pricing-component-with-toggle.netlify.app";
+const siteUrl = "https://pricing-component-with-toggle.abdelrhman-ahmed8881.workers.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

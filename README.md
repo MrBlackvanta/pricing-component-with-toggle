@@ -21,7 +21,8 @@ This is a solution to the [Pricing component with toggle challenge on Frontend M
 ### Links
 
 - Solution URL: [GitHub](https://github.com/MrBlackvanta/pricing-component-with-toggle)
-- Live Site URL: [Netlify](https://vanta-pricing-component-with-toggle.netlify.app)
+- Live Site URL: [Cloudflare](https://pricing-component-with-toggle.abdelrhman-ahmed8881.workers.dev)
+- Mirror: [Netlify](https://vanta-pricing-component-with-toggle.netlify.app)
 
 ## My process
 
