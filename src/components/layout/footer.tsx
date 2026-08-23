@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="px-6 pb-0.5 text-center">
+    <footer className="absolute inset-x-0 bottom-0 px-6 pb-0.5 text-center">
       <p className="text-xs text-dark-grayish-blue">
         Challenge by{" "}
         <a

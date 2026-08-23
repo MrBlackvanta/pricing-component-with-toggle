@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.variable} antialiased`}>
-      <body className="flex min-h-dvh flex-col v-page">
+      <body className="relative flex min-h-dvh flex-col v-page">
         {children}
         <Footer />
       </body>
