@@ -10,13 +10,22 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-const title = "Pricing component with toggle";
+const SITE_URL =
+  "https://pricing-component-with-toggle.abdelrhman-ahmed8881.workers.dev";
+
+const title = "Our Pricing | Monthly or annual storage plans";
 const description =
-  "Three-tier pricing table with an accessible monthly/annual billing toggle — Frontend Mentor challenge built with Next.js, TypeScript, and Tailwind CSS.";
-const siteUrl = "https://pricing-component-with-toggle.abdelrhman-ahmed8881.workers.dev";
+  "Compare the Basic, Professional and Master plans, switch between monthly and annual billing, and see the storage, seats and transfer limit each tier includes.";
+
+const shareImage = {
+  url: "/opengraph-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Our Pricing, with its three plan cards and billing toggle.",
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title,
   description,
   alternates: { canonical: "/" },
@@ -24,14 +33,16 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/",
-    siteName: title,
+    siteName: "Storage plans",
     locale: "en_US",
     type: "website",
+    images: [shareImage],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description,
+    images: [shareImage],
   },
 };
 
