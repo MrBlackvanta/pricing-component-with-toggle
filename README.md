@@ -22,7 +22,6 @@ This is a solution to the [Pricing component with toggle challenge on Frontend M
 
 - Solution URL: [GitHub](https://github.com/MrBlackvanta/pricing-component-with-toggle)
 - Live Site URL: [Cloudflare](https://pricing-component-with-toggle.abdelrhman-ahmed8881.workers.dev)
-- Mirror: [Netlify](https://vanta-pricing-component-with-toggle.netlify.app)
 
 ## My process
 
@@ -97,6 +96,6 @@ overhangs its content box by 2.3px per side, into 32px of padding.
 
 ## Author
 
-- UpWork - [Abdelrhman Abdelaal](https://upwork.com/freelancers/~01f0a9479696b61f49)
+- UpWork - [Abdelrhman Abdelaal](https://www.upwork.com/freelancers/mrblackvanta)
 - Frontend Mentor - [@MrBlackvanta](https://www.frontendmentor.io/profile/MrBlackvanta)
 - LinkedIn - [Abdelrhman Abdelaal](https://www.linkedin.com/in/abdelrhman-vanta/)
