@@ -1,6 +1,7 @@
 import { Footer } from "@/components/layout";
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
+import { SITE_URL } from "@/app/site";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -9,9 +10,6 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
 });
-
-const SITE_URL =
-  "https://pricing-component-with-toggle.abdelrhman-ahmed8881.workers.dev";
 
 const title = "Our Pricing | Monthly or annual storage plans";
 const description =
